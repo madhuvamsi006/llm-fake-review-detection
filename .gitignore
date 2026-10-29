@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment / secrets
+.env
+*.env
+secrets.yaml
+api_keys.yaml
+
+# Model checkpoints (large files - store on Drive/HuggingFace)
+*.bin
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+
+# Large data files (share via Drive/GitHub LFS)
+data/generated/*.csv
+data/generated/*.json
+data/processed/*.csv
+data/processed/*.json
+
+# Weights & Biases
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Thesis formatting docs (not part of code)
+*.docx

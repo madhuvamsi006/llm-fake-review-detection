@@ -1,0 +1,60 @@
+project:
+  name: llm-fake-review-detection
+  author: Madhu Vamsi Turaka
+  student_id: "1187433"
+  university: Liverpool John Moores University
+
+paths:
+  data_raw: data/raw/
+  data_generated: data/generated/
+  data_processed: data/processed/
+  results: results/
+  models: results/checkpoints/
+
+dataset:
+  base_dataset: fake_reviews_dataset.csv   # Salminen et al. (2022)
+  generators:
+    - genuine
+    - gpt2
+    - gpt4o
+    - claude
+    - llama3
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+  random_seed: 42
+  max_length: 512                           # max tokens for transformers
+
+generation:
+  n_reviews_per_generator: 5000            # new reviews to generate per LLM
+  temperature: 0.8
+  max_tokens: 300
+
+models:
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.1
+    random_state: 42
+  bert:
+    model_name: bert-base-uncased
+    epochs: 3
+    batch_size: 16
+    learning_rate: 2e-5
+  deberta:
+    model_name: microsoft/deberta-base
+    epochs: 3
+    batch_size: 8
+    learning_rate: 2e-5
+
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - auc
+  cost_benchmark:
+    n_reviews: 1000                         # reviews per latency benchmark run
+    device: cpu                             # cpu or cuda

@@ -1,0 +1,2 @@
+Classifier,Total latency (s),Latency/review (ms),Throughput (reviews/s),Peak RAM (MB),n_reviews,training_time_s
+XGBoost,0.003,0.0009,1104305.1,N/A,3853,1.23

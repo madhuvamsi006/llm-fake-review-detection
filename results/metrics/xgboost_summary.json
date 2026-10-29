@@ -1,0 +1,28 @@
+{
+  "in_distribution": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "auc": 1.0
+  },
+  "cross_generator": {
+    "accuracy": 0.8907,
+    "precision": 1.0,
+    "recall": 0.8907,
+    "f1": 0.9422,
+    "auc": NaN
+  },
+  "cross_gen_drop": 0.0578,
+  "held_out_generator": "llama3",
+  "training_time_s": 1.23,
+  "dataset_size": {
+    "total": 19000,
+    "genuine": 5000,
+    "llm_generated": 14000
+  },
+  "inference_cost": {
+    "latency_ms_per_review": 0.0009,
+    "throughput_reviews_per_sec": 1104305.1
+  }
+}
